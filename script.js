@@ -1,33 +1,17 @@
-let playerChoise;
-let compChoise;
-let random;
+let playerSelection = prompt("Choose and enter 'Rock', 'Paper' or 'Scissors'");
+let computerSelection = computerPlay();
 
-function compChoiseMake() {
-    if (random == 1) {
-        compChoise = "rock";
-    } else if (random == 2) {
-        compChoise = "paper";
+function computerPlay() {
+    let rndm = Math.floor(Math.random() * 3 + 1);
+    if (rndm == 1) {
+        return "rock";
+    } else if (rndm == 2) {
+        return "paper";
+    } else if (rndm == 3) {
+        return "scissors";
     } else {
-        compChoise = "scissors";
+        return ""
     }
 }
 
-function playRound(playerChoise, compChoise) {
-    random = Math.floor(Math.random() * 3 + 1);
-    compChoiseMake();
-    if ((playerChoise == "rock"  && compChoise == "scissors") || (playerChoise == "paper"  && compChoise == "rock") || (playerChoise == "scissors"  && compChoise == "paper")) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-
-
-
-for (i = 0; i < 5; i++) {
-    playerChoise = prompt("Choose and enter a 'Rock', 'Paper' or 'Scissors'");
-    playRound(playerChoise, compChoise);
-    console.log(compChoise, playerChoise, playRound(playerChoise, compChoise));
-}
+console.log(computerSelection, playerSelection);
