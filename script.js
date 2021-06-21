@@ -1,35 +1,33 @@
-let playerSelection = prompt("Enter 'Rock', 'Paper' or 'Scissors'");
-let compSelection = "str";
-let random =  Math.floor(Math.random() * 3);
+let playerChoise;
+let compChoise;
+let random;
 
-function computerPlay() {
-    if (random === 0) {
-        compSelection = "rock";
-    } else if(random === 1) {
-        compSelection = "paper";
+function compChoiseMake() {
+    if (random == 1) {
+        compChoise = "rock";
+    } else if (random == 2) {
+        compChoise = "paper";
     } else {
-        compSelection = "scissors";
+        compChoise = "scissors";
     }
 }
 
-computerPlay();
-
-function play(playerSelection, compSelection) {
-    if (playerSelection == "rock" && compSelection == "scissors") {
-        console.log("You won!");
-    } else if (playerSelection == "paper" && compSelection == "rock") {
-        console.log("You won!");
-    } else if (playerSelection == "scissors" && compSelection == "paper") {
-        console.log("You won!");
-    } else if (playerSelection == compSelection) {
-        console.log("Tie!");
+function playRound(playerChoise, compChoise) {
+    random = Math.floor(Math.random() * 3 + 1);
+    compChoiseMake();
+    if ((playerChoise == "rock"  && compChoise == "scissors") || (playerChoise == "paper"  && compChoise == "rock") || (playerChoise == "scissors"  && compChoise == "paper")) {
+        return true;
     } else {
-        console.log("You lose!");
+        return false;
     }
 }
 
-console.log(playerSelection);
-console.log(compSelection);
 
 
-play(playerSelection, compSelection);
+
+
+for (i = 0; i < 5; i++) {
+    playerChoise = prompt("Choose and enter a 'Rock', 'Paper' or 'Scissors'");
+    playRound(playerChoise, compChoise);
+    console.log(compChoise, playerChoise, playRound(playerChoise, compChoise));
+}
