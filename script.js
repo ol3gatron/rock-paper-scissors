@@ -1,6 +1,3 @@
-let playerSelection = prompt("Rock, paper or scissors?");
-let computerSelection = computerPlay();
-
 function computerPlay() {
     let result = Math.floor(Math.random() * 3 + 1);
     if (result === 1) {
@@ -23,6 +20,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log("Your choise is " + playerSelection);
-console.log("Computer choise is " + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Rock, paper or scissors?");
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+        console.log("Your choise is " + playerSelection);
+        console.log("Computer choise is " + computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        // console.log("Your score is " + score);
+        console.log("--------------------------------");
+    }
+}
+
+game();
