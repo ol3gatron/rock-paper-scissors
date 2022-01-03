@@ -1,3 +1,8 @@
+function playerPlay() {
+    let input = prompt("Rock, paper or scissors?").toLowerCase();
+    return input;
+}
+
 function computerPlay() {
     let result = Math.floor(Math.random() * 3 + 1);
     if (result === 1) {
@@ -12,24 +17,24 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "Tie!";
+        result = "Tie!🤝";
+        return result;
     } else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
-        return `You win! ${playerSelection} beats ${computerSelection}.`
+        result = `You win! ${playerSelection} beats ${computerSelection}.🎉`;
+        return result;
     } else {
-        return `You lose, ${computerSelection} beats ${playerSelection}.`
+        result  = `You lose, ${computerSelection} beats ${playerSelection}.😥`;
+        return result;
     }
 }
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock, paper or scissors?");
+        let playerSelection = playerPlay();
         let computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection);
-        console.log("Your choise is " + playerSelection);
-        console.log("Computer choise is " + computerSelection);
+        console.log("Your choise is " + playerSelection + " and " + "computer choise is " + computerSelection);
         console.log(playRound(playerSelection, computerSelection));
-        // console.log("Your score is " + score);
-        console.log("--------------------------------");
+        console.log("----------------------------------------------------");
     }
 }
 
