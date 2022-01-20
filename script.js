@@ -42,10 +42,11 @@ function counter(a, b) {
 
 function getResult(a, b) {
     if (a === 5) {
-        totalResult.textContent = "Win! 😎";
-        a = 0;
+        totalResult.textContent = "Congratulations, you win!";
+        totalResult.style.cssText = "color: green";
     } else if (b === 5) {
-        totalResult.textContent = "Lose 😩"
+        totalResult.textContent = "You lost, good luck next time!"
+        totalResult.style.cssText = "color: red"
     }
 }
 
@@ -53,7 +54,8 @@ function endGame(a, b) {
     if ((a === 5) || (b === 5)) {
         userCounter = 0;
         compCounter = 0;
-        totalResult.textContent = ""
+        totalResult.textContent = "";
+        totalResult.style.cssText = "";
     }
 }
 

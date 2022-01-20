@@ -23,8 +23,9 @@ body {
 }
 
 .total-result {
-  font-size: 72px;
+  font-size: 28px;
   color: red;
+  text-align: center;
 }
 
 .current-score {
@@ -48,4 +49,9 @@ button {
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
+  transition: 0.5s;
+}
+
+.pressed {
+  scale: 1.2;
 }
